@@ -1,6 +1,7 @@
 """Django views are Python functions that takes http requests and returns http response, like HTML documents.
 """
 from django.http import HttpResponse
+from django.template.loader import get_template, render_to_string
 
 
 def home(request):
@@ -9,4 +10,5 @@ def home(request):
     Args:
         request (_type_): Django sends a request to render data on web
     """
-    return HttpResponse("<center><h1>This is From Django Web FrameWork</h1></center>")
+    temp = render_to_string("home.html")
+    HttpResponse(temp)
