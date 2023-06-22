@@ -10,5 +10,6 @@ def home(request):
     Args:
         request (_type_): Django sends a request to render data on web
     """
-    temp = render_to_string("home.html")
-    HttpResponse(temp)
+    context = {'input': "Helloooo, Worlds"}
+    temp = render_to_string("home.html", context=context)
+    return HttpResponse(temp)
